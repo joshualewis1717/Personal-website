@@ -4,40 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lewis Coding</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div style="display: flex; justify-content: space-between; width: 100%;">
-        <div>Logo</div>
-        <div>Box2</div>
-    </div>
-    
-    <!--header>
-        <nav>
-            <img src="logo.png" alt="Logo" class="logo">
-            <ul class="nav-links">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section class="bio-section">
-            <div class="bio-content">
-                <div class="bio-name">
-                    <p>Joshua Lewis.</p>
-                </div>
-                <div class="bio-description">
-                    <p>This is a placeholder for my bio. More information will be added here soon.</p>
-                </div>
-            </div>
-        </section>
+    <style>
+        :root {
+            --background-color: #38394b;
+            --background-accent: #424358;
+            --text-color: #ffffff;
+            --selected-text:#fffdfd;
+            --unselected-text:#808080;
+        }
+
+        @font-face { font-family: 'unageo'; src: url('Unageo.ttf') format('truetype'); }
+
+        body {
+            font-family: 'unageo', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin-top: 1.5%;  margin-bottom: 1%;  margin-left: 2.5%;  margin-right: 2.5%;
+            padding-left: 2.5%;  padding-right: 2.5%;
+            align-items: center;
+            position:fixed;
+            border-radius: 5px;
+            background-color: var(--background-accent);
+        }
+        .current-nav-link{
+            font-family: 'unageo', sans-serif;
+            text-decoration: none;
+            font-size: 1vw;
+            color: var(--selected-text);
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+        .nav-link {
+            font-family: 'unageo', sans-serif;
+            text-decoration: none;
+            font-size: 1vw;
+            color: var(--unselected-text);
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+        .nav-link:visited {color: var(--unselected-text);}
+        .nav-link:hover   {color: var(--selected-text);}
+        .nav-link:focus   {color: var(--selected-text);}
+        .nav-link:active  {color: var(--selected-text);}
+
+        .logo {
+            height: 50px; /* Adjust as needed */
+            width: 50px;
+        }
+        .logoText{
+            font-family: 'unageo', sans-serif;
+            font-size: 1.5vw;
+            margin-left:10px;
+        }
         
-        <section class="projects-banner">
-            <p>rubiks cube solver<br>panda surfer<br>poop<br>poop</p>
-        </section>
-    </main-->
+        
+    </style>
+    
+</head>
+
+
+<body>
+    <nav>
+        <div style="display: flex; justify-content: flex-start; align-items: center;">
+            <img src="logo.png" alt="Logo" class="logo">
+            <p class=" logoText">Lewis Coding</p>
+        </div>
+        
+        <div>
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+
+    
 </body>
 </html>
