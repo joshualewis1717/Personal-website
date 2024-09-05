@@ -4,6 +4,7 @@
     src: url('Unageo.ttf') format('truetype');
 }
 
+
 /* Basic resets */
 body, h1, p, ul {
     margin: 0;
@@ -30,6 +31,7 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
+
 
 .logo {
     height: 50px; /* Adjust as needed */
