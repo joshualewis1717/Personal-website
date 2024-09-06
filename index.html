@@ -14,8 +14,7 @@
             --unselected-text: #6d6d6d;
             --standout: #ff0000;
         }
-
-        @font-face { font-family: 'unageo'; src: url('unageo.ttf') format('truetype'); }
+        
         @font-face { font-family: 'russo'; src: url('russo.ttf') format('truetype'); }
 
         body {
@@ -101,8 +100,11 @@
             const navbar = document.getElementById('navbar');
             const logoDiv = document.querySelector('nav div:nth-child(2)');
             const logoSVG = logoDiv.querySelector('img');
-    
-            if (window.scrollY === 0) {
+
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+
+            if (window.scrollY === 0 && viewportWidth>viewportHeight) {
                 navbar.style.height = '100px'; // Height when at the top
                 logoDiv.style.flexDirection = 'column'; // Left-to-right layout
                 logoSVG.style.height = '65px';
