@@ -16,7 +16,7 @@
         }
 
         @font-face { font-family: 'unageo'; src: url('unageo.ttf') format('truetype'); }
-        @font-face { font-family: 'russo'; src: url('russo_one.ttf') format('truetype'); }
+        @font-face { font-family: 'russo'; src: url('russo.ttf') format('truetype'); }
 
         body {
             font-family: "russo";
@@ -24,17 +24,26 @@
             color: var(--text-color);
             line-height: 1.6;
             font-size: 16px;
+            margin: 0;
         }
 
-        nav{
-            position: fixed; top: 0; left: 0; width: 100%; height: 20px;
-            display: flex; padding: 16px; justify-content: space-between;
-            align-items: center; box-sizing: border-box;
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px; /* Default height */
+            display: flex;
+            padding: 16px;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
             background-color: var(--background-color);
             box-shadow: 0 1px 0 0 #333333;
+            transition: height 0.3s ease; /* Smooth transition */
         }
 
-        .current-nav-link{
+        .current-nav-link {
             font-family: 'unageo', sans-serif;
             text-decoration: none;
             font-size: 16px;
@@ -60,82 +69,51 @@
         .logoText {
             font-family: 'russo', sans-serif;
             font-size: 16px;
-            margin-left: 10px;
+            margin: 0 10px;
         }
 
-        .svg-button {
-            display: inline-block;
-            cursor: pointer;
-            transition: transform 0.3s ease, fill 0.3s ease;
-        }
-
-        .svg-button:hover {
-            transform: scale(1.1);
-            fill: #ff0000;
-        }
-
-        .svg-button:active {
-            transform: scale(0.9);
-        }
-
-        .side-menu {
-            position: fixed;
-            top: 0;
-            right: 0;
-            height: 100%;
-            width: 250px;
-            background: var(--background-accent);
-            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .side-menu.open {
-            transform: translateX(0);
-        }
-
-        .close-btn {
-            cursor: pointer;
-            font-size: 24px;
-            background: var(--standout);
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-        }
+        
     </style>
-    
 </head>
-
-
 <body>
-    <nav>
-
+    <nav id="navbar">
         <div>
             <a href="#" class="nav-link">More</a>
         </div>
-
-        <div style="display: flex; justify-content: flex-start; align-items: center;">
-            <img src="logo.svg" alt="Logo" style="height: 20px; width: 20px; border-radius: 3px;">
-            <p class=" logoText">Lewis Coding</p>
+        <div style="display: flex; justify-content: flex-start; align-items: center; flex-direction: column;">
+            <img src="logo.svg" alt="Logo" style="height: 65px; width: 65px; border-radius: 3px;">
+            <p class="logoText">Lewis Coding</p>
         </div>
-        
         <div>
             <a href="#" class="nav-link">idk yet</a>
         </div>
     </nav>
 
-    <div style = "margin: 0 3%; margin-top: 80px; background-color: var(--standout);">
-        <img src="Feature graphic.png" style="width: 100%; height: auto;">
-    </div>
-
-    
+    <div style="margin: 0 3%; margin-top: 80px;"></div>
+    <img src="Feature graphic.png" style="width: 94%; height: auto; margin: 3% 3%;">
     <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
 
+    <script>
+        function buttonClick() { alert('Button clicked!'); }
     
-    <script>function buttonClick() {alert('Button clicked!');}
+        // JavaScript for resizing navbar on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const logoDiv = document.querySelector('nav div:nth-child(2)');
+            const logoSVG = logoDiv.querySelector('img');
+    
+            if (window.scrollY === 0) {
+                navbar.style.height = '100px'; // Height when at the top
+                logoDiv.style.flexDirection = 'column'; // Left-to-right layout
+                logoSVG.style.height = '65px';
+                logoSVG.style.width = '65px';
+            } else {
+                navbar.style.height = '50px'; // Height when scrolled down
+                logoDiv.style.flexDirection = 'row'; // Top-to-bottom layout
+                logoSVG.style.height = '20px';
+                logoSVG.style.width = '20px';
+            }
+        });
     </script>
 </body>
 </html>
