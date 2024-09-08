@@ -40,6 +40,8 @@
             background-color: var(--background-color);
             box-shadow: 0 1px 0 0 #333333;
             transition: height 0.3s ease; /* Smooth transition */
+            
+            z-index: 9999;
         }
 
         .current-nav-link {
@@ -70,52 +72,87 @@
             font-size: 16px;
             margin: 0 10px;
         }
-
+        .splide__slide img {
+            width: 100%;
+            height: auto;
+        }
         
+
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 </head>
 <body>
     <nav id="navbar">
         <div>
             <a href="#" class="nav-link">More</a>
         </div>
-        <div style="display: flex; justify-content: flex-start; align-items: center; flex-direction: column;">
+        <div style="display: flex; justify-content: flex-start; align-items: center; flex-direction: row;">
             <img src="logo.svg" alt="Logo" style="height: 65px; width: 65px; border-radius: 3px;">
             <p class="logoText">Lewis Coding</p>
         </div>
-        <div>
-            <a href="#" class="nav-link">idk yet</a>
-        </div>
+        <div></div>
     </nav>
 
-    <div style="margin: 0 3%; margin-top: 80px;"></div>
-    <img src="Feature graphic.png" style="width: 94%; height: auto; margin: 3% 3%;">
+    <div id="navbar_spacer" style="margin-top: 120px;"></div>
+    <section id="image-carousel" class="splide" aria-label="Beautiful Images">
+        <div id="imgTrack" class="splide__track" style="width: 94%; height: 100%; margin: 3% 3%;">
+              <ul id="imgSlider" class="splide__list" style = "height: 100%;">
+                  <li class="splide__slide">
+                    <div style="background: radial-gradient(circle at 70% 30%, #ff0000, #0000ff); width: 100%; height: 100%;"></div>
+                  </li>
+                  <li class="splide__slide"><img src="Feature graphic.png" alt=""></li>
+              </ul>
+        </div>
+    </section>
+
     <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
 
     <script>
-        function buttonClick() { alert('Button clicked!'); }
-    
-        // JavaScript for resizing navbar on scroll
-        window.addEventListener('scroll', function() {
+        function onResize(){
+            spacing = window.innerHeight * 0.5 +'px';
+            document.getElementById('imgTrack').style.height = spacing;
+            document.getElementById('imgSlider').style.height = spacing;
+
+            adjustNavbar();
+        }
+
+        function setNavBig(navbar, logoDiv, logoSVG) {
+            navbar.style.height = '100px';
+            logoDiv.style.flexDirection = 'column'; 
+            logoSVG.style.height = '50px';
+            logoSVG.style.width = '50px';
+        }
+
+        function setNavSmall(navbar, logoDiv, logoSVG) {
+            navbar.style.height = '50px'; 
+            logoDiv.style.flexDirection = 'row'; 
+            logoSVG.style.height = '20px';
+            logoSVG.style.width = '20px';
+        }
+
+        function adjustNavbar() {
             const navbar = document.getElementById('navbar');
+            const navSpacer = document.getElementById('navbar_spacer');
             const logoDiv = document.querySelector('nav div:nth-child(2)');
-            const logoSVG = logoDiv.querySelector('img');
+            const logoSVG = document.querySelector('nav div:nth-child(2) img');
 
-            const viewportWidth = window.innerWidth;
-            const viewportHeight = window.innerHeight;
-
-            if (window.scrollY === 0 && viewportWidth>viewportHeight) {
-                navbar.style.height = '100px'; // Height when at the top
-                logoDiv.style.flexDirection = 'column'; // Left-to-right layout
-                logoSVG.style.height = '65px';
-                logoSVG.style.width = '65px';
-            } else {
-                navbar.style.height = '50px'; // Height when scrolled down
-                logoDiv.style.flexDirection = 'row'; // Top-to-bottom layout
-                logoSVG.style.height = '20px';
-                logoSVG.style.width = '20px';
+            if (window.innerWidth > 600) { //pc
+                if (window.scrollY === 0) {
+                    navSpacer.style.marginTop = '120px';
+                    setNavBig(navbar, logoDiv, logoSVG);
+                } else setNavSmall(navbar, logoDiv, logoSVG);
+            } else { //mobile
+                setNavSmall(navbar, logoDiv, logoSVG);
+                navSpacer.style.marginTop = '70px';
             }
-        });
+        }
+    
+        window.addEventListener('scroll', adjustNavbar);
+        window.addEventListener('resize', onResize);
+        window.addEventListener('load', onResize);
+        new Splide('#image-carousel').mount();
+        
     </script>
 </body>
 </html>
