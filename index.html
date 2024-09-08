@@ -74,6 +74,18 @@
             margin: 0 10px;
         }
         .splide__slide img {width: 100%;height: auto;}
+
+        .btn{
+            width: 24.25%;
+            height: 15vh;
+        }
+
+        @media (max-width: 600px) {
+        .btn {
+            width: 48.5%;
+            height: 12vh;
+        }
+}
         
 
     </style>
@@ -83,66 +95,82 @@
 <body>
     <nav id="navbar">
         <div>
-            <a href="#" class="nav-link">More</a>
+            <img id="menu" class="nav-link" src="menu.svg" width="10px" height="10px" style="display: block;">
         </div>
         <div style="display: flex; justify-content: flex-start; align-items: center; flex-direction: row;">
-            <img src="logo.svg" alt="Logo" style="height: 65px; width: 65px; border-radius: 3px;">
-            <p class="logoText">Lewis Coding</p>
+            <img src="logo.svg" alt="Logo" style="height: 65px; width: 65px; border-radius: 3px; display: block;">
+            <p class="logoText" style="display: block;">Lewis Coding</p>
         </div>
         <div></div>
     </nav>
 
     <div id="navbar_spacer" style="margin-top: 120px;"></div>
-    <section id="image-carousel" class="splide" aria-label="Beautiful Images">
-        <div id="imgTrack" class="splide__track" style="width: 94%; height: 100%; margin: 3% 3%;">
+    <section id="image-carousel" class="splide" style="width: 94%; margin: 3% 3%;">
+        <div id="imgTrack" class="splide__track">
               <ul id="imgSlider" class="splide__list" style = "height: 100%;">
                 <li class="splide__slide">
-                    <div style="background: radial-gradient(circle at 70% 30%, #34be15, #1e4615); width: 100%; height: 100%; border-radius: 5vw; overflow: hidden; position: relative;">
+                    <div style="background: radial-gradient(circle at 70% 30%, #be7d15, #553300); width: 100%; height: 100%; border-radius: 5vh; overflow: hidden; position: relative;">
                         <img src="img-panda.png" alt="Rubik's Cube" style="position: absolute; top: 50%; left: 25%; transform: translate(-50%, -50%); width: auto; height: 150%;">
                         <div style="position: absolute; bottom: 55%; left: 50%; transform: translate(-50%, 50%); text-align: center;">
                             <div style="color: #ffffff; font-size: 10vw; font-family: unageo; font-weight: bold; white-space: nowrap;">Panda Surfer</div>
                             <div style="color: #ffffff; font-size: 2vw; font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: -4.5vw; white-space: nowrap;">endless runner | arcade</div> </div>
-                        <div style="position: absolute; left: 50%; transform: translate(-50%, 0%); text-align: center; color: #ffffff; font-size: 2vw; font-family: unageo; white-space: nowrap;">IN ALPHA TESTING</div></div></li>
+                        <div style="position: absolute; left: 50%; transform: translate(-50%, 0%); text-align: center; color: #ffffff; font-size: 2vw; font-family: unageo; white-space: nowrap; text-decoration: underline;">IN ALPHA TESTING</div></div></li>
                 <li class="splide__slide">
-                    <div style="background: radial-gradient(circle at 70% 30%, #be7d15, #553300); width: 100%; height: 100%; border-radius: 5vw; overflow: hidden; position: relative;">
+                    <div style="background: radial-gradient(circle at 70% 30%, #5f5f5f, #1a1a1a); width: 100%; height: 100%; border-radius: 5vh; overflow: hidden; position: relative;">
                         <img src="img-cube.png" alt="Rubik's Cube" style="position: absolute; top: 50%; left: 25%; transform: translate(-50%, -50%); width: auto; height: 150%;">
                         <div style="position: absolute; bottom: 55%; left: 50%; transform: translate(-50%, 50%); text-align: center;">
                             <div style="color: #ffffff; font-size: 10vw; font-family: unageo; font-weight: bold; white-space: nowrap;">CubeGenie</div>
                             <div style="color: #ffffff; font-size: 2vw; font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: -4.5vw; white-space: nowrap;">cube solver | cube simulator</div></div></div></li>
-                
-                
-    
               </ul>
         </div>
     </section>
 
-    <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+    <section style="width: 94%; margin: 3% 3%;">
+        <div style="display: flex; flex-wrap: wrap; gap: 1%; row-gap: 1vw">
+            <button class="btn">About me</button>
+            <button class="btn">My Projects</button>
+            <button class="btn">Socials</button>
+            <button class="btn">Report a bug</button>
+            <button class="btn">Suggest a feature</button>
+        </div>
+    </section>
+
+    <section style="width: 94%; margin: 3% 3%;">
+        <p>Hey!<br>I'm Josh<br>a solo developer from the uk</p>
+    </section>
+
+    
 
     <script>
         function onResize(){
-            spacing = window.innerHeight * 0.5 +'px';
+            spacing = window.innerHeight * 0.4 +'px';
             document.getElementById('imgTrack').style.height = spacing;
             document.getElementById('imgSlider').style.height = spacing;
 
             adjustNavbar();
         }
 
-        function setNavBig(navbar, logoDiv, logoSVG) {
+        function setNavBig(navbar, logoDiv, logoSVG, menu) {
             navbar.style.height = '100px';
             logoDiv.style.flexDirection = 'column'; 
             logoSVG.style.height = '50px';
             logoSVG.style.width = '50px';
+            menu.style.height = '30px';
+            menu.style.width = '30px';
         }
 
-        function setNavSmall(navbar, logoDiv, logoSVG) {
+        function setNavSmall(navbar, logoDiv, logoSVG, menu) {
             navbar.style.height = '50px'; 
             logoDiv.style.flexDirection = 'row'; 
             logoSVG.style.height = '20px';
             logoSVG.style.width = '20px';
+            menu.style.height = '20px';
+            menu.style.width = '20px';
         }
 
         function adjustNavbar() {
             const navbar = document.getElementById('navbar');
+            const menu = document.getElementById('menu');
             const navSpacer = document.getElementById('navbar_spacer');
             const logoDiv = document.querySelector('nav div:nth-child(2)');
             const logoSVG = document.querySelector('nav div:nth-child(2) img');
@@ -150,10 +178,10 @@
             if (window.innerWidth > 600) { //pc
                 if (window.scrollY === 0) {
                     navSpacer.style.marginTop = '120px';
-                    setNavBig(navbar, logoDiv, logoSVG);
-                } else setNavSmall(navbar, logoDiv, logoSVG);
+                    setNavBig(navbar, logoDiv, logoSVG, menu);
+                } else setNavSmall(navbar, logoDiv, logoSVG, menu);
             } else { //mobile
-                setNavSmall(navbar, logoDiv, logoSVG);
+                setNavSmall(navbar, logoDiv, logoSVG, menu);
                 navSpacer.style.marginTop = '70px';
             }
         }
