@@ -75,16 +75,20 @@
         }
         .splide__slide img {width: 100%;height: auto;}
 
-        .btn{
-            width: 24.25%;
-            height: 15vh;
+        .btn{width: 23%;height: 15vh;
+            border-radius: 5vh;
+            background: radial-gradient(circle at 70% 30%, #1b1bbb, #a200ff);
+            color: #f6f6f9;
+            border: none;
+            cursor: pointer;
+            justify-content: center;
+            text-align: center;
+            padding: 0;
+            margin: 1%;
+            font-family: russo;
+            font-size: large;
         }
-
-        @media (max-width: 600px) {
-        .btn {
-            width: 48.5%;
-            height: 12vh;
-        }
+        @media (max-width: 600px) {.btn {width: 46%;height: 12vh;}
 }
         
 
@@ -105,7 +109,7 @@
     </nav>
 
     <div id="navbar_spacer" style="margin-top: 120px;"></div>
-    <section id="image-carousel" class="splide" style="width: 94%; margin: 3% 3%;">
+    <section id="image-carousel" class="splide" style="width: 94%; margin: 1.5% 3%;">
         <div id="imgTrack" class="splide__track">
               <ul id="imgSlider" class="splide__list" style = "height: 100%;">
                 <li class="splide__slide">
@@ -125,17 +129,18 @@
         </div>
     </section>
 
-    <section style="width: 94%; margin: 3% 3%;">
-        <div style="display: flex; flex-wrap: wrap; gap: 1%; row-gap: 1vw">
+    <section style="width: 94%; margin: 1.5% 3%;">
+        <div style="display: flex; flex-wrap: wrap; gap: 0; row-gap: 0">
             <button class="btn">About me</button>
             <button class="btn">My Projects</button>
             <button class="btn">Socials</button>
             <button class="btn">Report a bug</button>
             <button class="btn">Suggest a feature</button>
+            <button class="btn">Suggest an app</button>
         </div>
     </section>
 
-    <section style="width: 94%; margin: 3% 3%;">
+    <section style="width: 94%; margin: 1.5% 3%;">
         <p>Hey!<br>I'm Josh<br>a solo developer from the uk</p>
     </section>
 
@@ -189,8 +194,7 @@
         window.addEventListener('scroll', adjustNavbar);
         window.addEventListener('resize', onResize);
         window.addEventListener('load', onResize);
-        new Splide('#image-carousel').mount();
-        
+        new Splide('#image-carousel', {type:'loop',perPage:1,focus:'center',autoplay:true,interval:5000,pagination:false,arrows:true,rewind:true}).mount();
     </script>
 </body>
 </html>
