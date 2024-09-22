@@ -12,6 +12,7 @@
             --text-color: #f6f6f9;
             --selected-text: #ecedf2;
             --unselected-text: #6d6d6d;
+            --outlines: #333333;
             --standout: #ff0000;
         }
         
@@ -39,7 +40,7 @@
             align-items: center;
             box-sizing: border-box;
             background-color: var(--background-color);
-            box-shadow: 0 1px 0 0 #333333;
+            box-shadow: 0 1px 0 0 var(--outlines);
             transition: height 0.3s ease; /* Smooth transition */
             
             z-index: 9999;
@@ -75,11 +76,13 @@
         }
         .splide__slide img {width: 100%;height: auto;}
 
-        .btn{width: 23%;height: 15vh;
+        .btn {
+            width: 23%;
+            height: 15vh;
             border-radius: 5vh;
-            background: radial-gradient(circle at 70% 30%, #1b1bbb, #a200ff);
-            color: #f6f6f9;
-            border: none;
+            background: transparent; /* Matches the background color */
+            color: #f6f6f9; /* Text color remains white */
+            border: 2px solid var(--outlines); /* Thin white outline */
             cursor: pointer;
             justify-content: center;
             text-align: center;
@@ -88,6 +91,10 @@
             font-family: russo;
             font-size: large;
         }
+        .btn:hover, .btn:focus {
+            border: 2px solid #ffffff;
+        }
+
         @media (max-width: 600px) {.btn {width: 46%;height: 12vh;}
 }
         
@@ -98,9 +105,7 @@
 </head>
 <body>
     <nav id="navbar">
-        <div>
-            <img id="menu" class="nav-link" src="menu.svg" width="10px" height="10px" style="display: block;">
-        </div>
+        <div></div>
         <div style="display: flex; justify-content: flex-start; align-items: center; flex-direction: row;">
             <img src="logo.svg" alt="Logo" style="height: 65px; width: 65px; border-radius: 3px; display: block;">
             <p class="logoText" style="display: block;">Lewis Coding</p>
@@ -109,16 +114,17 @@
     </nav>
 
     <div id="navbar_spacer" style="margin-top: 120px;"></div>
-    <section id="image-carousel" class="splide" style="width: 94%; margin: 1.5% 3%;">
+    <section id="image-carousel" class="splide" style="width: 92%; margin: 1.5% 4%; border: 2px solid var(--outlines); border-radius: 5vh;">
         <div id="imgTrack" class="splide__track">
               <ul id="imgSlider" class="splide__list" style = "height: 100%;">
                 <li class="splide__slide">
-                    <div style="background: radial-gradient(circle at 70% 30%, #be7d15, #553300); width: 100%; height: 100%; border-radius: 5vh; overflow: hidden; position: relative;">
-                        <img src="img-panda.png" alt="Rubik's Cube" style="position: absolute; top: 50%; left: 25%; transform: translate(-50%, -50%); width: auto; height: 150%;">
-                        <div style="position: absolute; bottom: 55%; left: 50%; transform: translate(-50%, 50%); text-align: center;">
-                            <div style="color: #ffffff; font-size: 10vw; font-family: unageo; font-weight: bold; white-space: nowrap;">Panda Surfer</div>
-                            <div style="color: #ffffff; font-size: 2vw; font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: -4.5vw; white-space: nowrap;">in development</div> </div>
-                        </div></li>
+                    <a href="/closed_testing/index.html" style="display: block; width: 100%; height: 100%; text-decoration: none;">
+                        <div style="background: radial-gradient(circle at 70% 30%, #be7d15, #553300); width: 100%; height: 100%; border-radius: 5vh; overflow: hidden; position: relative;">
+                            <img src="img-panda.png" alt="Rubik's Cube" style="position: absolute; top: 50%; left: 25%; transform: translate(-50%, -50%); width: auto; height: 150%;">
+                            <div style="position: absolute; bottom: 55%; left: 50%; transform: translate(-50%, 50%); text-align: center;">
+                                <div style="color: #ffffff; font-size: 10vw; font-family: unageo; font-weight: bold; white-space: nowrap;">Panda Surfer</div>
+                                <div style="color: #ffffff; font-size: 2vw; font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: -4.5vw; white-space: nowrap;">In closed beta</div></div></div></a></li>
+                                
                 <li class="splide__slide">
                     <div style="background: radial-gradient(circle at 70% 30%, #5f5f5f, #1a1a1a); width: 100%; height: 100%; border-radius: 5vh; overflow: hidden; position: relative;">
                         <img src="img-cube.png" alt="Rubik's Cube" style="position: absolute; top: 50%; left: 25%; transform: translate(-50%, -50%); width: auto; height: 150%;">
@@ -135,13 +141,10 @@
             <button class="btn">My Projects</button>
             <button class="btn">Socials</button>
             <button class="btn">Report a bug</button>
+            <!--button class="btn">Suggest a feature</button>
+            <button class="btn">Suggest an app</button-->
         </div>
     </section>
-
-    <section style="width: 94%; margin: 1.5% 3%;">
-        <p>Suggest an app<br>Suggest a feature</p>
-    </section>
-
     
 
     <script>
