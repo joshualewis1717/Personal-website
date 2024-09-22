@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Surfer Closed Testing</title>
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
+    <style>
+        :root {
+            --background-color: #030711;
+            --background-accent: #171c22;
+            --text-color: #f6f6f9;
+            --selected-text: #ecedf2;
+            --unselected-text: #6d6d6d;
+            --standout: #ff0000;
+        }
+
+        @font-face { font-family: 'russo'; src: url('russo.ttf') format('truetype'); }
+        @font-face { font-family: 'unageo'; src: url('unageo.ttf') format('truetype'); }
+
+        body {
+            font-family: "russo";
+            background: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 16px;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            font-family: 'unageo';
+            color: var(--text-color);
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        a {
+            color: var(--unselected-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover, a:focus {
+            color: var(--selected-text);
+        }
+
+        .btn {
+            width: 30%;
+            height: 10vh;
+            border-radius: 5vh;
+            background: radial-gradient(circle at 70% 30%, #1b1bbb, #a200ff);
+            color: #f6f6f9;
+            border: none;
+            cursor: pointer;
+            justify-content: center;
+            text-align: center;
+            font-family: 'russo';
+            font-size: large;
+            padding: 10px;
+            margin: 1%;
+        }
+
+        .btn:hover {
+            background-color: #a200ff;
+        }
+
+        @media (max-width: 600px) {
+            .btn { width: 100%; height: 8vh; }
+        }
+
+        .link-section {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Panda Surfer - Closed Testing Group</h1>
+    <p>Thank you for your interest in joining the closed testing group for Panda Surfer! Follow the steps below to join and become one of the early testers.</p>
+
+    <h2>Steps to Join</h2>
+    <ol>
+        <li>Join the testing program on <a href="#">Google Play (link)</a></li>
+        <li>Download the closed beta version of the game from the <a href="#">Play Store (link)</a></li>
+        <li>Join the <a href="#">Discord server (link)</a> to provide feedback and report bugs</li>
+    </ol>
+
+    <div class="link-section">
+        <button class="btn"><a href="#">Join Testing Program</a></button>
+        <button class="btn"><a href="#">Download Beta</a></button>
+        <button class="btn"><a href="#">Join Discord</a></button>
+    </div>
+
+    <p>If you encounter any issues or bugs, feel free to report them in the dedicated <a href="#">Discord channel (link)</a>.</p>
+</body>
+</html>
