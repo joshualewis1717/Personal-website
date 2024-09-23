@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panda Surfer Closed Testing</title>
-    <link rel="icon" href="logo.svg" type="image/svg+xml">
+    <title>Lewis Coding</title>
+    <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
     <style>
         :root {
             --background-color: #030711;
@@ -12,11 +12,12 @@
             --text-color: #f6f6f9;
             --selected-text: #ecedf2;
             --unselected-text: #6d6d6d;
+            --outlines: #333333;
             --standout: #ff0000;
         }
-
-        @font-face { font-family: 'russo'; src: url('russo.ttf') format('truetype'); }
-        @font-face { font-family: 'unageo'; src: url('unageo.ttf') format('truetype'); }
+        
+        @font-face { font-family: 'russo'; src: url('../assets/russo.ttf') format('truetype'); }
+        @font-face { font-family: 'unageo'; src: url('../assets/unageo.ttf') format('truetype'); }
 
         body {
             font-family: "russo";
@@ -25,74 +26,125 @@
             line-height: 1.6;
             font-size: 16px;
             margin: 0;
-            padding: 20px;
         }
 
-        h1, h2 {
-            font-family: 'unageo';
-            color: var(--text-color);
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px; /* Default height */
+            display: flex;
+            padding: 16px;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            background-color: var(--background-color);
+            box-shadow: 0 1px 0 0 var(--outlines);
+            transition: height 0.3s ease; /* Smooth transition */
+            
+            z-index: 9999;
         }
 
-        p {
-            font-size: 18px;
-        }
 
-        a {
-            color: var(--unselected-text);
-            text-decoration: none;
-            transition: color 0.3s ease;
+        .logoText {
+            font-family: 'russo', sans-serif;
+            font-size: 16px;
+            margin: 0 10px;
         }
-
-        a:hover, a:focus {
-            color: var(--selected-text);
-        }
+        .splide__slide img {width: 100%;height: auto;}
 
         .btn {
-            width: 30%;
-            height: 10vh;
+            width: 23%;
+            height: 15vh;
             border-radius: 5vh;
-            background: radial-gradient(circle at 70% 30%, #1b1bbb, #a200ff);
-            color: #f6f6f9;
-            border: none;
+            background: transparent; /* Matches the background color */
+            color: #f6f6f9; /* Text color remains white */
+            border: 2px solid var(--outlines); /* Thin white outline */
             cursor: pointer;
             justify-content: center;
             text-align: center;
-            font-family: 'russo';
-            font-size: large;
-            padding: 10px;
+            padding: 0;
             margin: 1%;
+            font-family: russo;
+            font-size: large;
+        }
+        .btn:hover, .btn:focus {
+            border: 2px solid #ffffff;
         }
 
-        .btn:hover {
-            background-color: #a200ff;
-        }
+        @media (max-width: 600px) {.btn {width: 46%;height: 12vh;}
+}
+        
 
-        @media (max-width: 600px) {
-            .btn { width: 100%; height: 8vh; }
-        }
-
-        .link-section {
-            margin-top: 30px;
-        }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 </head>
 <body>
-    <h1>Panda Surfer - Closed Testing Group</h1>
-    <p>Thank you for your interest in joining the closed testing group for Panda Surfer! Follow the steps below to join and become one of the early testers.</p>
+    <nav id="navbar">
+        <div></div>
+        <div style="display: flex; justify-content: flex-start; align-items: center; flex-direction: row;">
+            <img src="../assets/logo.svg" alt="Logo" style="height: 65px; width: 65px; border-radius: 3px; display: block;">
+            <p class="logoText" style="display: block;">Panda Surfer Closed Testing</p>
+        </div>
+        <div></div>
+    </nav>
 
-    <h2>Steps to Join</h2>
-    <ol>
-        <li>Join the testing program on <a href="#">Google Play (link)</a></li>
-        <li>Download the closed beta version of the game from the <a href="#">Play Store (link)</a></li>
-        <li>Join the <a href="#">Discord server (link)</a> to provide feedback and report bugs</li>
-    </ol>
+    <div id="navbar_spacer" style="margin-top: 120px;"></div>
+    <section id="text" style="width: 94%; margin:3%;">
+        <div style="padding: 6% 6%; margin: 1%; font-size: 100%;border: 1px solid var(--outlines); border-radius: 2vh; text-align: center;">Thank you for your interest in joining the closed testing group for Panda Surfer! Follow the steps below to join and become one of the early testers</div>
+        
 
-    <div class="link-section">
-        <button class="btn"><a href="#">Join Testing Program</a></button>
-        <button class="btn"><a href="#">Download Beta</a></button>
-        <button class="btn"><a href="#">Join Discord</a></button>
-    </div>
 
-    <p>If you encounter any issues or bugs, feel free to report them in the dedicated <a href="#">Discord channel (link)</a>.</p>
+        <div style="padding: 6% 6%; margin: 1%; font-size: 100%;border: 1px solid var(--outlines); border-radius: 2vh; text-align: center;">
+            <img src="google_groups.png" alt="google groups logo" style="height: 100px; width: auto;">
+            <div style="margin-left: 10px;">1.<br>Join the google group by clicking here<br>This gives you access to the private release</div>
+        </div>
+    </section>
+    
+
+    <script>
+
+        function setNavBig(navbar, logoDiv, logoSVG, menu) {
+            navbar.style.height = '100px';
+            logoDiv.style.flexDirection = 'column'; 
+            logoSVG.style.height = '50px';
+            logoSVG.style.width = '50px';
+            menu.style.height = '30px';
+            menu.style.width = '30px';
+        }
+
+        function setNavSmall(navbar, logoDiv, logoSVG, menu) {
+            navbar.style.height = '50px'; 
+            logoDiv.style.flexDirection = 'row'; 
+            logoSVG.style.height = '20px';
+            logoSVG.style.width = '20px';
+            menu.style.height = '20px';
+            menu.style.width = '20px';
+        }
+
+        function adjustNavbar() {
+            const navbar = document.getElementById('navbar');
+            const menu = document.getElementById('menu');
+            const navSpacer = document.getElementById('navbar_spacer');
+            const logoDiv = document.querySelector('nav div:nth-child(2)');
+            const logoSVG = document.querySelector('nav div:nth-child(2) img');
+
+            if (window.innerWidth > 600) { //pc
+                if (window.scrollY === 0) {
+                    navSpacer.style.marginTop = '120px';
+                    setNavBig(navbar, logoDiv, logoSVG, menu);
+                } else setNavSmall(navbar, logoDiv, logoSVG, menu);
+            } else { //mobile
+                navSpacer.style.marginTop = '70px';
+                setNavSmall(navbar, logoDiv, logoSVG, menu);
+            }
+        }
+    
+        window.addEventListener('scroll', adjustNavbar);
+        window.addEventListener('resize', adjustNavbar);
+        window.addEventListener('load', adjustNavbar);
+    </script>
 </body>
 </html>
