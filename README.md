@@ -1,1 +1,1 @@
-Just a personal portfolio website
+A personal portfolio website
