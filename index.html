@@ -7,12 +7,13 @@
     <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
     <style>
         :root {
-            --background-color: #030711;
+            --background-color: #20272f;
             --background-accent: #171c22;
             --text-color: #f6f6f9;
+            --text-spotlight: #00BFFF;
             --selected-text: #ecedf2;
             --unselected-text: #6d6d6d;
-            --outlines: #333333;
+            --outlines: #3c4753;
             --standout: #ff0000;
         }
         
@@ -24,7 +25,7 @@
             background: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
-            font-size: 16px;
+            font-size: clamp(8px, 2vw, 12px);
             margin: 0;
         }
 
@@ -33,26 +34,38 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100px; /* Default height */
+            height: 50px;
+            padding: 0% 3%;
             display: flex;
-            padding: 16px;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             box-sizing: border-box;
             background-color: var(--background-color);
-            box-shadow: 0 1px 0 0 var(--outlines);
-            transition: height 0.3s ease; /* Smooth transition */
-            
-            z-index: 9999;
+            box-shadow: none;
+            transition: box-shadow 1s ease, height 0.3s ease;
+
+        }
+
+        .navLink {
+            margin-left: 5%;
+            margin-right: 5%;
+            font-size: clamp(8px, 2vw, 12px);
+        }
+        @media (max-width: 600px) {
+            .navLink {
+                padding-left: 0%; /* Adjust padding for smaller screens */
+                padding-right: 0%;
+            }
         }
 
 
         .logoText {
             font-family: 'russo', sans-serif;
-            font-size: 16px;
+            font-size: clamp(10px, 2vw, 14px);
             margin: 0 10px;
         }
-        .splide__slide img {width: 100%;height: auto;}
+
 
         .btn {
             width: 23%;
@@ -72,9 +85,38 @@
         .btn:hover, .btn:focus {
             border: 2px solid #ffffff;
         }
+    
+        .section1{
+            margin-top: 50px;
+            padding: 3vw 3vw;
+        }
 
-        @media (max-width: 600px) {.btn {width: 46%;height: 12vh;}
-}
+        .square {
+            flex: 1 1 50%; /* Each div takes up half the width */
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center; /* Centers text */
+        }
+
+        @media (max-width: 300px) {
+            .section1{
+                height: 188vw;
+                width: 94vw;
+            }
+
+            .square {
+                flex: 1 1 100%;
+                width: 94vw;
+                height: 94vw;
+                flex-direction: column;
+            }
+        }
+
+
+
         
 
     </style>
@@ -83,104 +125,66 @@
 </head>
 <body>
     <nav id="navbar">
-        <div></div>
         <div style="display: flex; justify-content: flex-start; align-items: center; flex-direction: row;">
-            <img src="assets/logo.svg" alt="Logo" style="height: 65px; width: 65px; border-radius: 3px; display: block;">
+            <img src="assets/logo.svg" alt="Logo" style="height: 20px; width: 20px; border-radius: 3px; display: block;">
             <p class="logoText" style="display: block;">Lewis Coding</p>
         </div>
-        <div></div>
+        <div style="display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; flex-grow: 1;">
+            <div class="navLink">Home</div>
+            <div class="navLink">Projects</div>
+            <div class="navLink" style="margin-right: 0;">Resume</div>
+        </div>
     </nav>
-
-    <div id="navbar_spacer" style="margin-top: 120px;"></div>
-
-    <section id="image-carousel" class="splide" style="width: 92%; margin: 1.5% 4%; border: 2px solid var(--outlines); border-radius: 5vh;">
-        <div id="imgTrack" class="splide__track">
-              <ul id="imgSlider" class="splide__list" style = "height: 100%;">
-                <li class="splide__slide">
-                    <a href="/closed_testing/" style="display: block; width: 100%; height: 100%; text-decoration: none;">
-                        <div style="background: radial-gradient(circle at 70% 30%, #be7d15, #553300); width: 100%; height: 100%; border-radius: 5vh; overflow: hidden; position: relative;">
-                            <img src="assets/img-panda.png" alt="Rubik's Cube" style="position: absolute; top: 50%; left: 25%; transform: translate(-50%, -50%); width: auto; height: 150%;">
-                            <div style="position: absolute; bottom: 55%; left: 50%; transform: translate(-50%, 50%); text-align: center;">
-                                <div style="color: #ffffff; font-size: 10vw; font-family: unageo; font-weight: bold; white-space: nowrap;">Panda Surfer</div>
-                                <div style="color: #ffffff; font-size: 2vw; font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: -4.5vw; white-space: nowrap;">In closed beta</div></div></div></a></li>
-                                
-                <li class="splide__slide">
-                    <div style="background: radial-gradient(circle at 70% 30%, #5f5f5f, #1a1a1a); width: 100%; height: 100%; border-radius: 5vh; overflow: hidden; position: relative;">
-                        <img src="assets/img-cube.png" alt="Rubik's Cube" style="position: absolute; top: 50%; left: 25%; transform: translate(-50%, -50%); width: auto; height: 150%;">
-                        <div style="position: absolute; bottom: 55%; left: 50%; transform: translate(-50%, 50%); text-align: center;">
-                            <div style="color: #ffffff; font-size: 10vw; font-family: unageo; font-weight: bold; white-space: nowrap;">CubeGenie</div>
-                            <div style="color: #ffffff; font-size: 2vw; font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: -4.5vw; white-space: nowrap;">cube solver | cube simulator</div></div></div></li>
-              </ul>
-        </div>
-    </section>
-
-    <section style="width: 94%; margin: 1.5% 3%;">
-        <div style="display: flex; flex-wrap: wrap; gap: 0; row-gap: 0">
-            <button class="btn">About me</button>
-            <button class="btn">My Projects</button>
-            <button class="btn">Socials</button>
-            <button class="btn">Report a bug</button>
-            <!--button class="btn">Suggest a feature</button>
-            <button class="btn">Suggest an app</button-->
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2024 Lewis Coding</p>
-    </footer>
     
+    <section id="section1" class = "section1">
+        <div style="width: 94vw; height: 47vw; display: flex; flex-wrap: wrap;">
+            <div class="square" style="flex-direction: column; align-items: start;">
+          
+                <div style="display: flex; align-items: flex-start; flex-direction: row;">
+                    <p>Hey,</p>
+                    <p style="color: var(--text-spotlight); margin-left: 0px 5px;">I'm</p>
+                </div>
+                <p style="color: var(--text-spotlight);">Joshua Lewis</p>
+                <div>Android and Web Developer</div>
+                <div>description</div>
+                <div>Get in touch</div>
+                <div>Check me out on ...</div>
+    
+            </div>
+            <div class="square">
+              <img src="/assets/logo.svg" style="width: 75%; height: 80%; border-radius: 50%;">
+            </div>
+        </div>
+    </section>
+
+    <section id="section2" style="padding: 3vw 3vw;background-color: var(--background-accent);">
+        <div style="width: 94vw; height: 70vw">What I Do</div>
+    </section>
+
+    <section id="section3" style="padding: 3vw 3vw;">
+        <div style="width: 94vw; height: 70vw">Projects overview</div>
+    </section>
+
+    <footer><div style = "width: 100%; text-align: center;">© 2024 Lewis Coding | Joshua Lewis</div></footer>
 
     <script>
         function onResize(){
-            spacing = window.innerHeight * 0.4 +'px';
-            document.getElementById('imgTrack').style.height = spacing;
-            document.getElementById('imgSlider').style.height = spacing;
-
-            adjustNavbar();
-        }
-
-        function setNavBig(navbar, logoDiv, logoSVG, menu) {
-            navbar.style.height = '100px';
-            logoDiv.style.flexDirection = 'column'; 
-            logoSVG.style.height = '50px';
-            logoSVG.style.width = '50px';
-            menu.style.height = '30px';
-            menu.style.width = '30px';
-        }
-
-        function setNavSmall(navbar, logoDiv, logoSVG, menu) {
-            navbar.style.height = '50px'; 
-            logoDiv.style.flexDirection = 'row'; 
-            logoSVG.style.height = '20px';
-            logoSVG.style.width = '20px';
-            menu.style.height = '20px';
-            menu.style.width = '20px';
-        }
-
-        function adjustNavbar() {
             const navbar = document.getElementById('navbar');
-            const menu = document.getElementById('menu');
-            const navSpacer = document.getElementById('navbar_spacer');
-            const logoDiv = document.querySelector('nav div:nth-child(2)');
-            const logoSVG = document.querySelector('nav div:nth-child(2) img');
 
-            if (window.innerWidth > 600) { //pc
-                if (window.scrollY === 0) {
-                    navSpacer.style.marginTop = '120px';
-                    setNavBig(navbar, logoDiv, logoSVG, menu);
-                } else setNavSmall(navbar, logoDiv, logoSVG, menu);
-            } else { //mobile
-                navSpacer.style.marginTop = '70px';
-                setNavSmall(navbar, logoDiv, logoSVG, menu);
+            if (window.scrollY > 0) { // If scrolled down
+                navbar.style.boxShadow = '0 .4px 0 0 var(--outlines)'; // Apply box shadow
+                navbar.style.height= '30px'
+            } else { // If at the top
+                navbar.style.boxShadow = 'none'; // Remove box shadow
+                navbar.style.height= '50px'
             }
         }
     
-        window.addEventListener('scroll', adjustNavbar);
+        window.addEventListener('scroll', onResize);
         window.addEventListener('resize', onResize);
         window.addEventListener('load', onResize);
-        new Splide('#image-carousel', {type:'loop',perPage:1,focus:'center',autoplay:true,interval:5000,pagination:false,arrows:true,rewind:true}).mount();
-        
-        onResize();
+    
     </script>
+    
 </body>
 </html>
