@@ -45,10 +45,27 @@
 
         .navText{font-size: 18px;}
         .navLink{font-size: 18px;}
+        .section1{margin-top: 50px;  padding: 3vw 3vw;}
+        .square {
+            flex: 1 1 50%; /* Each div takes up half the width */
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center; /* Centers text */
+        }
         
         @media (max-width: 600px) {
             .navText{font-size: 14px;}
             .navLink{font-size: 14px;}
+            .section1{height: 188vw;width: 94vw;}
+            .square {
+                flex: 1 1 100%;
+                width: 94vw;
+                height: 94vw;
+                flex-direction: column;
+            }
         }
         
 
@@ -72,6 +89,17 @@
             <div class="navLink" style="margin: 0% 2%; margin-right: 0;">Resume</div>
         </div>
     </nav>
+
+    <section id="section1" class = "section1">
+        <div style="width: 94vw; height: 47vw; display: flex; flex-wrap: wrap;">
+            <div class="square">
+                <img src="assets/logo.svg" style="width: 75%; height: 80%; border-radius: 50%;">
+            </div>
+            <div class="square">
+                <img src="assets/logo.svg" style="width: 75%; height: 80%; border-radius: 50%;">
+            </div>
+        </div>
+    </section>
 
     <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
     
