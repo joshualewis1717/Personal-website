@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lewis Coding</title>
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <style>
+        :root {
+            --background-color: #20272f;
+            --background-accent: #171c22;
+            --text-color: #f6f6f9;
+            --text-spotlight: #00BFFF;
+            --selected-text: #ecedf2;
+            --unselected-text: #6d6d6d;
+            --outlines: #3c4753;
+            --standout: #ff0000;
+        }
+        
+        @font-face { font-family: 'russo'; src: url('assets/russo.ttf') format('truetype'); }
+
+        body {
+            font-family: "russo";
+            background: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;   left: 0;
+            width: 100%;   height: 10vh;
+            padding: 0% 3%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            background-color: var(--background-color);
+            box-shadow: none;
+            transition: box-shadow 1s ease, height 0.3s ease;
+        }
+
+        .navText{font-size: 18px;}
+        .navLink{font-size: 18px;}
+        .section1{margin-top: 50px;  padding: 3vw 3vw;}
+        .square {
+            flex: 1 1 50%; /* Each div takes up half the width */
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center; /* Centers text */
+        }
+        
+        @media (max-width: 600px) {
+            .navText{font-size: 14px;}
+            .navLink{font-size: 14px;}
+            .section1{height: 188vw;width: 94vw;}
+            .square {
+                flex: 1 1 100%;
+                width: 94vw;
+                height: 94vw;
+                flex-direction: column;
+            }
+        }
+        
+
+
+
+        
+
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+</head>
+<body>
+    <nav id="navbar">
+        <div style="height: 100%; display: flex; justify-content: flex-start; align-items: center; flex-direction: row;">
+            <img src="assets/logo.svg" alt="Logo" style="height: 50%; width: auto; border-radius: 3px; display: block;">
+            <div class="navText" style="display: block; padding-left: 10px;">Lewis Coding</div>
+        </div>
+        <div style="height: 100%; display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; flex-grow: 1;"></div>
+            <div class="navLink" style="margin: 0% 2%;">Home</div>
+            <div class="navLink" style="margin: 0% 2%; color: var(--text-spotlight);">Projects</div>
+            <div class="navLink" style="margin: 0% 2%; margin-right: 0;">Resume</div>
+        </div>
+    </nav>
+
+    <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+    
+
+    <footer><div style = "width: 100%; text-align: center;">© 2024 Lewis Coding | Joshua Lewis</div></footer>
+
+    <script>
+        function onResize(){
+            const navbar = document.getElementById('navbar');
+            const navTextElements = document.querySelectorAll('.nav-text');
+            
+
+            if (window.scrollY > 0) { // If scrolled down
+                navbar.style.boxShadow = '0 .4px 0 0 var(--outlines)'; // Apply box shadow
+                navbar.style.height= '5vh'
+            } else { // If at the top
+                navbar.style.boxShadow = 'none'; // Remove box shadow
+                navbar.style.height= '10vh'
+            }
+        }
+    
+        window.addEventListener('scroll', onResize);
+        window.addEventListener('resize', onResize);
+        window.addEventListener('load', onResize);
+    
+    </script>
+    
+</body>
+</html>
