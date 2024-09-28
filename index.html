@@ -25,17 +25,16 @@
             background: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
-            font-size: clamp(14px,3vw,18px);
+            font-size: 14px;
             margin: 0;
         }
 
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 0;left: 0;
             width: 100%;
-            height: 50px;
-            padding: 3%;
+            height: 10vh;
+            padding: 0% 3%;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -44,79 +43,18 @@
             background-color: var(--background-color);
             box-shadow: none;
             transition: box-shadow 1s ease, height 0.3s ease;
+        }
 
+        .navText{
+            font-size: 18px;
         }
         
-        .logoText {
-            font-size: clamp(14px,3vw,24px);
-            margin: 0 10px;
-        }
-
-        .navLink {
-            font-size: clamp(14px,3vw,24px);
-            margin-left: 5%;
-            margin-right: 5%;
-        }
-
-
-        .btn {
-            width: 23%;
-            height: 15vh;
-            border-radius: 5vh;
-            background: transparent; /* Matches the background color */
-            color: #f6f6f9; /* Text color remains white */
-            border: 2px solid var(--outlines); /* Thin white outline */
-            cursor: pointer;
-            justify-content: center;
-            text-align: center;
-            padding: 0;
-            margin: 1%;
-            font-family: russo;
-            font-size: large;
-        }
-        .btn:hover, .btn:focus {
-            border: 2px solid #ffffff;
-        }
-    
-        .section1{
-            margin-top: 50px;
-            padding: 3vw 3vw;
-        }
-        
-        .introductionTop{
-            display: flex;
-            align-items: flex-start;
-            flex-direction: row;
-            padding-top: 20%;
-        }
-
-        .square {
-            flex: 1 1 50%; /* Each div takes up half the width */
-            width: 50%;
-            height: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center; /* Centers text */
-        }
-
         @media (max-width: 600px) {
-            .section1{
-                height: 188vw;
-                width: 94vw;
-            }
-
-            .introductionTop{
-                padding-top: 0%;
-            }
-
-            .square {
-                flex: 1 1 100%;
-                width: 94vw;
-                height: 94vw;
-                flex-direction: column;
+            .navText{
+                font-size: 14px;
             }
         }
+        
 
 
 
@@ -128,60 +66,34 @@
 </head>
 <body>
     <nav id="navbar">
-        <div style="display: flex; justify-content: flex-start; align-items: center; flex-direction: row;">
-            <img src="assets/logo.svg" alt="Logo" style="height: 20px; width: 20px; border-radius: 3px; display: block;">
-            <div class="logoText" style="display: block;">Lewis Coding</div>
+        <div style="height: 100%; display: flex; justify-content: flex-start; align-items: center; flex-direction: row;">
+            <img src="assets/logo.svg" alt="Logo" style="height: 50%; width: auto; border-radius: 3px; display: block;">
+            <div class="navText" style="display: block; padding-left: 10px;">Lewis Coding</div>
         </div>
-        <div style="display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; flex-grow: 1;">
-            <div class="navLink">Home</div>
-            <div class="navLink">Projects</div>
-            <div class="navLink" style="margin-right: 0;">Resume</div>
+        <div style="height: 100%; display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; flex-grow: 1;"></div>
+            <div class="navText" style="margin: 0% 3%;">Home</div>
+            <div class="navText" style="margin: 0% 3%;">Projects</div>
+            <div class="navText" style="margin: 0% 3%; margin-right: 0;">Resume</div>
         </div>
     </nav>
-    
-    <section id="section1" class = "section1">
-        <div style="width: 94vw; height: 47vw; display: flex; flex-wrap: wrap;">
-            <div class="square" style="display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;">
-          
-                <div class="introductionTop">
-                    <div>Hey,</div>
-                    <div style="color: var(--text-spotlight); margin: 0px 5px;">I'm</div>
-                </div>
-                <div style="color: var(--text-spotlight); font-size: clamp(28px, 5vw, 36px);">Joshua Lewis</div>
-                <div>Android and Web Developer</div>
-                <div>description</div>
-                <div>Get in touch</div>
-                <div>Check me out on ...</div>
-    
-            </div>
-            <div class="square">
-              <img src="/assets/logo.svg" style="width: 75%; height: 80%; border-radius: 50%;">
-            </div>
-        </div>
-    </section>
 
-    <section id="section2" style="padding: 3vw 3vw;background-color: var(--background-accent);">
-        <div>This wi show you what the defualt text size gjwisogh gehriuda ogheuig heauirg heuairo gzeiof nw\JIF HTSR HS HRT S HTAEZD HDG DZSEG REG DEG Zq grderh rdh str uj djn f</div>
-        <div style="width: 94vw; height: 70vw">What I Do</div>
-        
-    </section>
-
-    <section id="section3" style="padding: 3vw 3vw;">
-        <div style="width: 94vw; height: 70vw">Projects overview</div>
-    </section>
+    <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+    
 
     <footer><div style = "width: 100%; text-align: center;">© 2024 Lewis Coding | Joshua Lewis</div></footer>
 
     <script>
         function onResize(){
             const navbar = document.getElementById('navbar');
+            const navTextElements = document.querySelectorAll('.nav-text');
+            
 
             if (window.scrollY > 0) { // If scrolled down
                 navbar.style.boxShadow = '0 .4px 0 0 var(--outlines)'; // Apply box shadow
-                navbar.style.height= '30px'
+                navbar.style.height= '5vh'
             } else { // If at the top
                 navbar.style.boxShadow = 'none'; // Remove box shadow
-                navbar.style.height= '50px'
+                navbar.style.height= '10vh'
             }
         }
     
