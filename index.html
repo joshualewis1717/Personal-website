@@ -25,8 +25,13 @@
             background: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
-            font-size: clamp(12px, 2vw, 16px);
+            font-size: clamp(14px, 2.5vw, 18px);
             margin: 0;
+        }
+
+        div {
+            font-size: inherit; /* Ensures divs inherit font size from body */
+            color: inherit; /* Inherits text color from body as well */
         }
 
         nav {
@@ -50,9 +55,11 @@
         .navLink {
             margin-left: 5%;
             margin-right: 5%;
-            font-size: clamp(12px, 2vw, 16px);
         }
         @media (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
             .navLink {
                 padding-left: 0%; /* Adjust padding for smaller screens */
                 padding-right: 0%;
@@ -63,7 +70,6 @@
 
         .logoText {
             font-family: 'russo', sans-serif;
-            font-size: clamp(10px, 2vw, 12px);
             margin: 0 10px;
         }
 
@@ -91,6 +97,13 @@
             margin-top: 50px;
             padding: 3vw 3vw;
         }
+        
+        .introductionTop{
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row;
+            padding-top: 20%;
+        }
 
         .square {
             flex: 1 1 50%; /* Each div takes up half the width */
@@ -106,6 +119,10 @@
             .section1{
                 height: 188vw;
                 width: 94vw;
+            }
+
+            .introductionTop{
+                padding-top: 0%;
             }
 
             .square {
@@ -141,11 +158,11 @@
         <div style="width: 94vw; height: 47vw; display: flex; flex-wrap: wrap;">
             <div class="square" style="display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;">
           
-                <div style="display: flex; align-items: flex-start; flex-direction: row; padding-top: 20%;">
+                <div class="introductionTop">
                     <div>Hey,</div>
                     <div style="color: var(--text-spotlight); margin: 0px 5px;">I'm</div>
                 </div>
-                <div style="color: var(--text-spotlight); font-size: clamp(1.5rem, 5vw, 3rem);">Joshua Lewis</div>
+                <div style="color: var(--text-spotlight); font-size: clamp(28px, 5vw, 36px);">Joshua Lewis</div>
                 <div>Android and Web Developer</div>
                 <div>description</div>
                 <div>Get in touch</div>
@@ -159,7 +176,9 @@
     </section>
 
     <section id="section2" style="padding: 3vw 3vw;background-color: var(--background-accent);">
+        <div>This wi show you what the defualt text size gjwisogh gehriuda ogheuig heauirg heuairo gzeiof nw\JIF HTSR HS HRT S HTAEZD HDG DZSEG REG DEG Zq grderh rdh str uj djn f</div>
         <div style="width: 94vw; height: 70vw">What I Do</div>
+        
     </section>
 
     <section id="section3" style="padding: 3vw 3vw;">
