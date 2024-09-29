@@ -6,6 +6,30 @@
     <title>Lewis Coding</title>
     <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .introductionTop{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            margin-top: 20%;
+            font-size: 36px;
+        }
+        .myName{
+            font-size: 48px;
+            color: var(--text-spotlight);
+        }
+        @media (max-width: 600px) {
+            .introductionTop{
+                font-size: 36px;
+            }
+            .myName{
+                font-size: 48px;
+            }
+        }
+
+    </style>
+    
 </head>
 <body>
     <nav id="navbar">
@@ -22,13 +46,30 @@
 
     <section id="section1" class = "section1">
         <div style="width: 94vw; height: 47vw; display: flex; flex-wrap: wrap;">
-            <div class="square">
-                <img src="assets/logo.svg" style="width: 75%; height: 80%; border-radius: 50%;">
+            <div class="square" style="display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;">
+          
+                <div class="introductionTop">
+                    <div>Hey,</div>
+                    <div style="color: var(--text-spotlight); margin: 0px 10px;">I'm</div></div>
+                <div class="myName">Joshua Lewis</div>
+                <div>Android and Web Developer</div>
+                <div>description</div>
+                <div>Get in touch</div>
+                <div>Check me out on ...</div>
+    
             </div>
             <div class="square">
                 <img src="assets/logo.svg" style="width: 75%; height: 80%; border-radius: 50%;">
             </div>
         </div>
+    </section>
+
+    <section id="section2" style="padding: 3vw 3vw;background-color: var(--background-accent);">
+        <div style="width: 94vw; height: 70vw">What I Do</div>
+    </section>
+
+    <section id="section3" style="padding: 3vw 3vw;">
+        <div style="width: 94vw; height: 70vw">Projects overview</div>
     </section>
 
     <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
