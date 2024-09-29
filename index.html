@@ -8,23 +8,11 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        .introductionTop{
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            font-size: clamp(18px,3vw,100px);
-        }
-        .myName{
-            font-size: clamp(36px,6vw,100px);
-            color: var(--text-spotlight);
-        }
-        .androidWebDev{font-size: 40px;}
+        .largeText{font-size: clamp(36px,6vw,100px);}
+        .mediumText{font-size: clamp(18px,3vw,100px);}
         @media (max-width: 600px) {
-            .introductionTop{
-                font-size: 36px;
-            }
-            .myName{font-size: 48px;}
-            .androidWebDev{font-size: 40px;}
+            .largeText{font-size: 48px;}
+            .mediumText{font-size: 32px;}
         }
 
     </style>
@@ -46,11 +34,11 @@
     <section id="section1" class = "section1">
         <div style="width: 94vw; height: 47vw; display: flex; flex-wrap: wrap;">
             <div class="square" style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center;">
-                <div class="introductionTop">
+                <div class="mediumText" style="display: flex;flex-wrap: wrap;flex-direction: row;">
                     <div>Hey,</div>
                     <div style="color: var(--text-spotlight); margin: 0px 10px;">I'm</div></div>
-                <div class="myName">Joshua Lewis</div>
-                <div class="androidWebDev">Android and Web Developer</div>
+                <div class="largeText" style="color: var(--text-spotlight);">Joshua Lewis</div>
+                <div class="mediumText">Android and Web Developer</div>
                 <div>I am currently studying for a degree in Computer Science and am looking for freelance work</div>
                 <button>Let's chat</button>
                 <div>Check me out on (there will be social buttons here)</div>
