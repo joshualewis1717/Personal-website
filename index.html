@@ -12,20 +12,21 @@
             display: flex;
             flex-wrap: wrap;
             flex-direction: row;
-            margin-top: 20%;
-            font-size: 36px;
+            margin-top: 10%;
+            font-size: clamp(18px,3vw,100px);
         }
         .myName{
-            font-size: 48px;
+            font-size: clamp(36px,6vw,100px);
             color: var(--text-spotlight);
         }
+        .androidWebDev{font-size: 40px;}
         @media (max-width: 600px) {
             .introductionTop{
+                margin-top: 10%;
                 font-size: 36px;
             }
-            .myName{
-                font-size: 48px;
-            }
+            .myName{font-size: 48px;}
+            .androidWebDev{font-size: 40px;}
         }
 
     </style>
