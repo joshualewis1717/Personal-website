@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lewis Coding</title>
-    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
     <style>
         :root {
             --background-color: #20272f;
@@ -17,7 +17,7 @@
             --standout: #ff0000;
         }
         
-        @font-face { font-family: 'russo'; src: url('assets/russo.ttf') format('truetype'); }
+        @font-face { font-family: 'russo'; src: url('../assets/russo.ttf') format('truetype'); }
 
         body {
             font-family: "russo";
@@ -44,7 +44,8 @@
         }
 
         .navText{font-size: 18px;}
-        .navLink{font-size: 18px;}
+        .navLink{font-size: 18px; text-decoration: none; color: var(--text-color); background: none; cursor: pointer;}
+        .navLink:active,.navLink:focus,.navLink:hover {color: var(--text-spotlight);}
         .section1{margin-top: 50px;  padding: 3vw 3vw;}
         .square {
             flex: 1 1 50%; /* Each div takes up half the width */
@@ -80,17 +81,17 @@
 <body>
     <nav id="navbar">
         <div style="height: 100%; display: flex; justify-content: flex-start; align-items: center; flex-direction: row;">
-            <img src="assets/logo.svg" alt="Logo" style="height: 50%; width: auto; border-radius: 3px; display: block;">
+            <img src="../assets/logo.svg" alt="Logo" style="height: 50%; width: auto; border-radius: 3px; display: block;">
             <div class="navText" style="display: block; padding-left: 10px;">Lewis Coding</div>
         </div>
         <div style="height: 100%; display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; flex-grow: 1;"></div>
-            <div class="navLink" style="margin: 0% 2%;">Home</div>
+            <a href = "../index.html" class="navLink" style="margin: 0% 2%;">Home</a>
             <div class="navLink" style="margin: 0% 2%; color: var(--text-spotlight);">Projects</div>
             <div class="navLink" style="margin: 0% 2%; margin-right: 0;">Resume</div>
         </div>
     </nav>
 
-    <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+    <p><br><br><br><br><br><br><br><br><br>WILL BE PROJECTS HERE<br><br>THIS WEBSITE IS A WORK IN PROGRESS <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
     
 
     <footer><div style = "width: 100%; text-align: center;">© 2024 Lewis Coding | Joshua Lewis</div></footer>
