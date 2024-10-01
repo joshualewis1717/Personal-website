@@ -54,10 +54,6 @@ nav {
         flex: 1 1 100%;
         height: 50%
     }
-
-
-
-
     .navText{font-size: 14px;}
     .navLink{font-size: 14px;}
 }
