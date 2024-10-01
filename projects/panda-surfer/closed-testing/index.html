@@ -17,7 +17,6 @@
         }
         
         @font-face { font-family: 'russo'; src: url('../../../assets/russo.ttf') format('truetype'); }
-        @font-face { font-family: 'unageo'; src: url('../../../assets/unageo.ttf') format('truetype'); }
 
         body {
             font-family: "russo";
@@ -83,7 +82,7 @@
     <nav id="navbar">
         <div></div>
         <div style="display: flex; justify-content: flex-start; align-items: center; flex-direction: row;">
-            <img src="../../../assets/logo.svg" alt="Logo" style="height: 65px; width: 65px; border-radius: 3px; display: block;">
+            <a href="../../../"><img src="../../../assets/logo.svg" alt="Logo" style="height: 65px; width: 65px; border-radius: 3px; display: block;"></a>
             <p class="logoText" style="display: block;">Panda Surfer Closed Testing</p>
         </div>
         <div></div>
@@ -102,10 +101,12 @@
         </div></a>
 
         <div style="margin: 1%; font-size: 100%; text-align: center; display: flex; flex-wrap: wrap;">
-            <div style="background-color: var(--background-accent); flex: 1 1 calc(50% - 0.5vw); box-sizing: border-box; margin-right: 0.5vw; border-radius: 2vh;">stuff</div>
-            <div style="background-color: var(--background-accent); flex: 1 1 calc(50% - 0.5vw); box-sizing: border-box; margin-left: 0.5vw; border-radius: 2vh;">stuff</div>
+            <div style="background-color: var(--background-accent); flex: 1 1 calc(50% - 0.5vw); border: 1px solid var(--outlines);box-sizing: border-box; margin-right: 0.5vw; border-radius: 2vh;">
+                <a href="https://play.google.com/store/apps/details?id=com.lewiscoding.pandasurfer" target="_blank" rel="noopener noreferrer" style="text-decoration: none;background: none;color: var(--text-color);">2. Click here to join the test on android</a>
+            </div>
+            <div style="background-color: var(--background-accent); flex: 1 1 calc(50% - 0.5vw); border: 1px solid var(--outlines);box-sizing: border-box; margin-left: 0.5vw; border-radius: 2vh;">
+                <a href="https://play.google.com/apps/testing/com.lewiscoding.pandasurfer" target="_blank" rel="noopener noreferrer" style="text-decoration: none;background: none;color: var(--text-color);">3. Click here to join the test on the web</div>
         </div>
-        
     </section>
 
 
