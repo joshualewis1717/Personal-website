@@ -10,9 +10,11 @@
     <style>
         .largeText{font-size: clamp(36px,6vw,100px);}
         .mediumText{font-size: clamp(18px,3vw,100px);}
+        .titleText{font-size: clamp(18px,2vw,100px);}
         @media (max-width: 600px) {
             .largeText{font-size: 48px;}
             .mediumText{font-size: 32px;}
+            .titleText{font-size: 24px;}
         }
 
     </style>
@@ -38,9 +40,16 @@
                 <div style="color: var(--text-spotlight); margin: 0px 10px;">I'm</div></div>
             <div class="largeText" style="color: var(--text-spotlight);">Joshua Lewis</div>
             <div class="mediumText">Android and Web Developer</div>
-            <div>I am currently studying for a degree in Computer Science and am looking for freelance work</div>
-            <button>Let's chat</button>
-            <div>Check me out on (there will be social buttons here)</div>
+            <div style="margin-top: 3%;">I am currently studying for a degree in Computer Science and am looking for freelance work</div>
+
+            <button class="button" style="margin-top: 20%; margin-bottom: 3%; height: 6vh;">Let's chat</button>
+            
+            <div style="width: 100%; display: flex; justify-content: left; align-items: center;">
+                <img src = "assets/github.svg" style="margin: 1%; margin-left: 0; height: 3vh; width: auto;">
+                <img src = "assets/linkedin.svg" style="margin: 1%; margin-left: 0; height: 2.3vh; width: auto;">
+            
+            </div>
+
         </div>
         <div class = "section1div">
             <img src="assets/guest.svg" style="width: 80%; height: 80%; object-fit: contain;">
@@ -48,13 +57,37 @@
             
     </section>
 
-    <section id="section2" style="padding: 3vw 3vw;background-color: var(--background-accent);">
-        <div style="width: 94vw; height: 70vw">What I Do</div>
+    <!--section id="section2" style="padding: 3vw 3vw;">
+        <div class ="titleText" style="width: 94vw; height: 70vw">What I Do</div>
+    </section-->
+    <style>
+        .section1Box {
+            height: 50vh;
+            flex: 1 1 30%; /* Adjust the width to fit more boxes side by side */
+            background-color: brown;
+            margin: 2vh 2vh;
+            border-radius: 7vh;
+        }
+    
+        @media (max-width: 1024px) {
+            .section1Box {
+                flex: 1 1 100%;
+            }
+        }
+        
+    </style>
+    
+    <section id="section3" style="padding: 3vw 3vw; background-color: var(--background-accent);">
+        <div class="titleText" style="margin-bottom: 5vh;">Projects overview</div>
+    
+        <div style="display: flex; text-align: center;  flex-wrap: wrap;">
+            <div class="section1Box">Rubik's Cube</div>
+            <div class="section1Box">Panda Surfer</div>
+            <div class="section1Box">placeholder</div>
+            <div class="section1Box">placeholder</div>
+        </div>
     </section>
-
-    <section id="section3" style="padding: 3vw 3vw;">
-        <div style="width: 94vw; height: 70vw">Projects overview</div>
-    </section>
+    
 
     <footer><div style = "width: 100%; text-align: center;">© 2024 Lewis Coding | Joshua Lewis</div></footer>
 
