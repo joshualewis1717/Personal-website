@@ -1,38 +1,40 @@
 :root {
-    --background-color: #20272f;
-    --background-accent: #171c22;
-    --text-color: #f6f6f9;
-    --text-spotlight: #00BFFF;
-    --selected-text: #ecedf2;
-    --unselected-text: #6d6d6d;
-    --outlines: #3c4753;
-    --standout: #ff0000;
+  --background-color: #20272f;
+  --background-accent: #171c22;
+  --text-color: #f6f6f9;
+  --text-spotlight: #00BFFF;
+  --selected-text: #ecedf2;
+  --unselected-text: #6d6d6d;
+  --outlines: #3c4753;
+  --standout: #ff0000;
 }
 
 @font-face { font-family: 'russo'; src: url('assets/russo.ttf') format('truetype'); }
+@font-face { font-family: 'unageo'; src: url('assets/unageo.ttf') format('truetype'); }
 
 body {
-    font-family: "russo";
-    background: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    font-size: 14px;
-    margin: 0;
+  font-family: "russo";
+  background: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 14px;
+  margin: 0;
 }
 
 nav {
-    position: fixed;
-    top: 0;   left: 0;
-    width: 100%;   height: 10vh;
-    padding: 0% 3%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    background-color: var(--background-color);
-    box-shadow: none;
-    transition: box-shadow 1s ease, height 0.3s ease;
+  position: fixed;
+  top: 0;   left: 0;
+  width: 100%;   height: 10vh;
+  padding: 0% 3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: var(--background-color);
+  box-shadow: none;
+  transition: box-shadow 1s ease, height 0.3s ease;
+  z-index: 99999;
 }
 
 .navText{font-size: 18px;}
@@ -40,69 +42,69 @@ nav {
 .navLink:active,.navLink:focus,.navLink:hover {color: var(--text-spotlight);}
 
 .section1div{
-    flex: 1 1 50%;
-    height: 100%;
+  flex: 1 1 50%;
+  height: 100%;
 
-    display: flex; /* Add flex to center the content */
-    align-items: center; /* Vertically center */
-    justify-content: center; /* Horizontally center */
-    white-space: normal;
+  display: flex; /* Add flex to center the content */
+  align-items: center; /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  white-space: normal;
 }
 
 
 
 @media (max-width: 600px) {
-    .section1div{
-        flex: 1 1 100%;
-        height: 50%
-    }
-    .navText{font-size: 14px;}
-    .navLink{font-size: 14px;}
+  .section1div{
+      flex: 1 1 100%;
+      height: 50%
+  }
+  .navText{font-size: 14px;}
+  .navLink{font-size: 14px;}
 }
 
 
 .button {
-    align-items: center;
-    background-color: #0A66C2;
-    border: 0;
-    border-radius: 100px;
-    box-sizing: border-box;
-    color: #ffffff;
-    cursor: pointer;
-    display: inline-flex;
-    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    justify-content: center;
-    line-height: 20px;
-    max-width: 480px;
-    min-height: 40px;
-    min-width: 0px;
-    overflow: hidden;
-    padding: 0px;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: center;
-    touch-action: manipulation;
-    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-    user-select: none;
-    -webkit-user-select: none;
-    vertical-align: middle;
-  }
-  
-  .button:hover,
-  .button:focus { 
-    background-color: #16437E;
-    color: #ffffff;
-  }
-  
-  .button:active {
-    background: #09223b;
-    color: rgb(255, 255, 255, .7);
-  }
-  
-  .button:disabled { 
-    cursor: not-allowed;
-    background: rgba(0, 0, 0, .08);
-    color: rgba(0, 0, 0, .3);
-  }
+  align-items: center;
+  background-color: #0A66C2;
+  border: 0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+}
+
+.button:hover,
+.button:focus { 
+  background-color: #16437E;
+  color: #ffffff;
+}
+
+.button:active {
+  background: #09223b;
+  color: rgb(255, 255, 255, .7);
+}
+
+.button:disabled { 
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, .08);
+  color: rgba(0, 0, 0, .3);
+}
