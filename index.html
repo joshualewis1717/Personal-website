@@ -41,27 +41,39 @@
         }
         @media (max-width: 600px) {.section1Box {flex: 1 1 100%;}}
 
+        .section1TextContainer {height: 90%; width:96%;}
+        @media (max-width: 600px) {.section1TextContainer{height: 100%;}}
         
+        .section1{
+            margin: 3vh 3vw; margin-top: 13vh; height: 84vh; width: 94vw; display: flex; flex-wrap: wrap;
+        }
         
+        @media (max-width: 600px) {.section1{
+            height: fit-content;
+        }}
     </style>
 
-    <section id="section1" style = "margin: 3vh 3vw; margin-top: 13vh; height: 84vh; width: 94vw; display: flex; flex-wrap: wrap;">
-        <div class = "section1div" style="display: flex; flex-direction: column; align-items: flex-start; justify-content: start;">
-            <div class = "section1TextSpacer"></div>
-            <div class="mediumText" style="display: flex;flex-wrap: wrap;flex-direction: row;">
-                <div>Hey,</div>
-                <div style="color: var(--text-spotlight); margin: 0px 10px;">I'm</div>
+    <section id="section1" class = "section1">
+        <div class = "section1div" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: chartreuse;">
+            <div class = "section1TextContainer">
+            
+            <div style="background-color:rgb(83, 107, 107); height: 40%; width: 98%; display: flex; flex-direction: column; justify-content: end;">
+                <div class="mediumText" style="display: flex;flex-wrap: wrap;flex-direction: row;">
+                    <div>Hey,</div>
+                    <div style="color: var(--text-spotlight); margin: 0px 10px;">I'm</div></div>
+                <div class="largeText" style="color: var(--text-spotlight);">Joshua Lewis</div>
             </div>
-            <div class="largeText" style="color: var(--text-spotlight);">Joshua Lewis</div>
 
-            <!--div class="mediumText" style="display: flex;flex-wrap: wrap;flex-direction: row;">
-                <div>Hey,</div>
-                <div style="color: var(--text-spotlight); margin: 0px 10px;">I'm</div></div>
-            <div class="largeText" style="color: var(--text-spotlight);">Joshua Lewis</div>
+            <div style="background-color:rgb(166, 210, 210); height: 40%; width: 98%;">
             <div class="mediumText">Android and Web Developer</div>
             <div style="margin-top: 3%;">I am currently studying for a degree in Computer Science and am looking for freelance work</div>
+            </div>
 
-            <button class="button" style="margin-top: 20%; margin-bottom: 3%; height: 6vh;">Let's chat</button-->
+            <div style="background-color:aqua; height: 20%; width: 98%;">
+                <button class="button" style="margin-top: 3%; margin-bottom: 3%; height: 6vh;">Let's chat</button>
+            </div>
+            
+        </div>
         </div>
 
         <div id="profile_pic_container_parent" class = "section1div">
@@ -73,13 +85,19 @@
 
     <script>
         function adjustSquares() {
-            const parent = document.getElementById("profile_pic_container_parent");
             const child = document.getElementById("profile_pic_container");
-            const size = Math.min(parent.clientWidth, parent.clientHeight) * 0.9;
+            if (window.innerWidth > 600) { // Check if screen width is more than 600px
+                const parent = document.getElementById("profile_pic_container_parent");
+                const size = Math.min(parent.clientWidth, parent.clientHeight) * 0.9;
 
-            child.style.width = `${size}px`;
-            child.style.height = `${size}px`;
+                child.style.width = `${size}px`; // Set child width
+                child.style.height = `${size}px`; // Set child height
+            } else {
+                child.style.width = "95%"
+                child.style.height = "auto"
+            }
         }
+
         adjustSquares();
         window.addEventListener("resize", adjustSquares);
 
