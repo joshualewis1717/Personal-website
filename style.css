@@ -51,6 +51,8 @@ nav {
   white-space: normal;
 }
 
+.section1TextSpacer {height: 10%;}@media (max-width: 600px) {.section1TextSpacer{height: 0;}}
+
 
 
 @media (max-width: 600px) {

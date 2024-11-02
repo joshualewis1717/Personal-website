@@ -33,29 +33,6 @@
         </div>
     </nav>
 
-    <section id="section1" style = "margin: 3vh 3vw; margin-top: 13vh; height: 84vh; width: 94vw;  display: flex; flex-wrap: wrap;">
-        <div class = "section1div" style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center;">
-            <div class="mediumText" style="display: flex;flex-wrap: wrap;flex-direction: row;">
-                <div>Hey,</div>
-                <div style="color: var(--text-spotlight); margin: 0px 10px;">I'm</div></div>
-            <div class="largeText" style="color: var(--text-spotlight);">Joshua Lewis</div>
-            <div class="mediumText">Android and Web Developer</div>
-            <div style="margin-top: 3%;">I am currently studying for a degree in Computer Science and am looking for freelance work</div>
-
-            <button class="button" style="margin-top: 20%; margin-bottom: 3%; height: 6vh;">Let's chat</button>
-            
-            <div style="width: 100%; display: flex; justify-content: left; align-items: center;">
-                <img src = "assets/github.svg" style="margin: 1%; margin-left: 0; height: 3vh; width: auto;">
-                <img src = "assets/linkedin.svg" style="margin: 1%; margin-left: 0; height: 2.3vh; width: auto;">
-            
-            </div>
-
-        </div>
-        <div class = "section1div">
-            <img src="assets/guest.svg" style="width: 80%; height: 80%; object-fit: contain;">
-        </div>
-            
-    </section>
     <style>
         .section1Box {
             height: 50vh;
@@ -63,8 +40,52 @@
             margin: 2vh 2vh;
         }
         @media (max-width: 600px) {.section1Box {flex: 1 1 100%;}}
+
+        
         
     </style>
+
+    <section id="section1" style = "margin: 3vh 3vw; margin-top: 13vh; height: 84vh; width: 94vw; display: flex; flex-wrap: wrap;">
+        <div class = "section1div" style="display: flex; flex-direction: column; align-items: flex-start; justify-content: start;">
+            <div class = "section1TextSpacer"></div>
+            <div class="mediumText" style="display: flex;flex-wrap: wrap;flex-direction: row;">
+                <div>Hey,</div>
+                <div style="color: var(--text-spotlight); margin: 0px 10px;">I'm</div>
+            </div>
+            <div class="largeText" style="color: var(--text-spotlight);">Joshua Lewis</div>
+
+            <!--div class="mediumText" style="display: flex;flex-wrap: wrap;flex-direction: row;">
+                <div>Hey,</div>
+                <div style="color: var(--text-spotlight); margin: 0px 10px;">I'm</div></div>
+            <div class="largeText" style="color: var(--text-spotlight);">Joshua Lewis</div>
+            <div class="mediumText">Android and Web Developer</div>
+            <div style="margin-top: 3%;">I am currently studying for a degree in Computer Science and am looking for freelance work</div>
+
+            <button class="button" style="margin-top: 20%; margin-bottom: 3%; height: 6vh;">Let's chat</button-->
+        </div>
+
+        <div id="profile_pic_container_parent" class = "section1div">
+            <div id="profile_pic_container" style="width: 80%; height: 80%;">
+                <img src="assets/profile.jpeg" style="width: 100%; height: 100%; border-radius: 30%; object-fit: contain;">
+            </div>
+        </div>            
+    </section>
+
+    <script>
+        function adjustSquares() {
+            const parent = document.getElementById("profile_pic_container_parent");
+            const child = document.getElementById("profile_pic_container");
+            const size = Math.min(parent.clientWidth, parent.clientHeight) * 0.9;
+
+            child.style.width = `${size}px`;
+            child.style.height = `${size}px`;
+        }
+        adjustSquares();
+        window.addEventListener("resize", adjustSquares);
+
+    </script>
+
+    
     
     <section id="section2" style="padding: 3vw 3vw; background-color: var(--background-accent);">
         <div class="titleText" style="margin-bottom: 5vh;">Recent Projects</div>
