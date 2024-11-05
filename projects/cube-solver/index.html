@@ -3,30 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cube Solver | Lewis Coding</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Link to shared stylesheet -->
+    <title>Lewis Coding</title>
+    <link rel="icon" href="../../assets/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../style.css">
+
+    <style>
+        .largeText{font-size: clamp(36px,6vw,100px);}
+        .mediumText{font-size: clamp(18px,3vw,100px);}
+        .titleText{font-size: clamp(18px,2vw,100px);}
+        @media (max-width: 600px) {
+            .largeText{font-size: 48px;}
+            .mediumText{font-size: 32px;}
+            .titleText{font-size: 24px;}
+        }
+
+    </style>
+    
 </head>
 <body>
-    <header>
-        <h1>Cube Solver</h1>
-        <nav>
-            <ul>
-                <li>updated look coming soon</li>
-                <li><a href="../../">Home</a></li>
-                <li><a href="index.html">Cube Solver</a></li>
-                <li><a href="private-policy/">Privacy Policy</a></li>
-                <li><a href="credits/">Credits</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav id="navbar">
+        <a href = "../../" style="text-decoration: none; color: white;">
+        <div style="height: 100%; display: flex; justify-content: flex-start; align-items: center; flex-direction: row;">
+            <img src="../../assets/logo.svg" alt="Logo" style="height: 30px; width: auto; border-radius: 3px; display: block;">
+            <div class="navText" style="display: block; padding-left: 10px;">Cube Solver</div>
+        </div></a>
+        <div style="height: 100%; display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; flex-grow: 1;">
+            <a href="private-policy/" class="navLink" style="margin: 0% 2%;">Private Policy</a>
+            <a href="credits/" class="navLink" style="margin: 0% 2%; margin-right: 0;">Credits</a>
+        </div>
+    </nav>
 
-    <section>
-        <h2>About Cube Solver</h2>
-        <p>This app helps you solve Rubik's Cube puzzles.</p>
+
+    <section id="section1" style = "margin: 3vh 3vw; margin-top: 11vh; height: fit-content; width: 94%; display: flex; flex-wrap: wrap;">
+        <a href = "https://play.google.com/store/apps/details?id=com.jlabapps.rubiks_cube_solver&hl=en&gl=US" style="width: 100%; text-decoration: none; color: white;">
+        <div style="background: radial-gradient(circle at 70% 30%, #5f5f5f, #1a1a1a); width: 100%; height: 50vh; overflow: hidden; position: relative; border-radius: 2vh;">
+                <img src="../../assets/img-cube.png" alt="Rubik's Cube" style="position: absolute; top: 50%; left: 25%; transform: translate(-50%, -50%); width: auto; height: 125%;">
+                    <div style="position: absolute; bottom: 50%; left: 50%; transform: translate(-50%, 50%); text-align: center;">
+                        <div style="color: #ffffff; font-size: 16vh; font-family: unageo; font-weight: bold; white-space: nowrap;">CubeGenie</div>
+                        <div style="color: #ffffff; font-size: 4vh; font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: -7vh; white-space: nowrap;">Cube Solver | Cube Simulator</div>
+                    </div>
+        </div>
+        </a>
+    
+        <p>Experience cube solving like never before with our all-in-one Rubik's Cube Solver app. Featuring a sleek and user-friendly interface, our app offers a range of customizable skins to suit your style preferences.
+            <br><br>
+            With a built in solving algorithm, our app guarantees solutions for any cube configuration. Whether you're a novice or an expert, our step-by-step solving guide will assist you in mastering the cube effortlessly.
+            <br><br>
+            Say goodbye to manual scrambling – our built-in scrambler provides randomized cube configurations with just a tap. Need a fresh start? Hit the reset button to clear your progress and begin anew.
+            <br><br>
+            For those who prefer a hands-on approach, our input page allows you to input scramble sequences directly from your physical cube, ensuring precise solving every time.
+            <br><br>
+            Join the Cube-solving community and download our app today to enhance your solving experience!
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+
     </section>
 
-    <footer>
-        <p>© 2024 Lewis Coding</p>
-    </footer>
+    <footer><div style = "width: 100%; text-align: center;">© 2024 Lewis Coding | Joshua Lewis</div></footer>
+
+    <script>
+        function onResize(){
+            const navbar = document.getElementById('navbar');
+            const navTextElements = document.querySelectorAll('.nav-text');
+            
+
+            if (window.scrollY > 0) { // If scrolled down
+                navbar.style.boxShadow = '0 1px 0 0 var(--outlines)'; // Apply box shadow
+                navbar.style.height= '5vh'
+            } else { // If at the top
+                navbar.style.boxShadow = 'none'; // Remove box shadow
+                navbar.style.height= '10vh'
+            }
+        }
+    
+        window.addEventListener('scroll', onResize);
+        window.addEventListener('resize', onResize);
+        window.addEventListener('load', onResize);
+    
+    </script>
+    
 </body>
 </html>
