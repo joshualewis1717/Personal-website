@@ -9,15 +9,34 @@
 
     <style>
         .largeText{font-size: clamp(36px,6vw,100px);}
-        .mediumText{font-size: clamp(18px,3vw,100px);}
-        .titleText{font-size: clamp(18px,2vw,100px);}
-        @media (max-width: 600px) {
-            .largeText{font-size: 48px;}
-            .mediumText{font-size: 32px;}
-            .titleText{font-size: 24px;}
+        @media (max-width: 600px) {.largeText{font-size: 36px;}}
+
+        .sectionMargin{margin: 3vh 10vw;}
+        @media (max-width: 350px) {.section1{margin: 3vh 3vw;}}
+
+        .appIcon {
+          background: radial-gradient(circle at 70% 30%, #5f5f5f, #1a1a1a);
+          height: 100%;
+          aspect-ratio: 1;
+          overflow: hidden;
+          position: relative;
+          border-radius: 2vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
+        .carousel img {width: 100%;height: auto;border-radius: 10px;}
+        .carousel div {margin: 0 10px;}
+        .carousel div {border-radius: 10px;overflow: hidden;}
+
     </style>
+
+    <!--needed for slick-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     
 </head>
 <body>
@@ -28,38 +47,54 @@
             <div class="navText" style="display: block; padding-left: 10px;">Cube Solver</div>
         </div></a>
         <div style="height: 100%; display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; flex-grow: 1;">
-            <a href="private-policy/" class="navLink" style="margin: 0% 2%;">Private Policy</a>
-            <a href="credits/" class="navLink" style="margin: 0% 2%; margin-right: 0;">Credits</a>
+            <a href="private-policy/" class="navLink" style="margin: 0% 2%;" target="_blank">Private Policy</a>
+            <a href="credits/" class="navLink" style="margin: 0% 2%; margin-right: 0;" target="_blank">Credits</a>
         </div>
     </nav>
 
-
-    <section id="section1" style = "margin: 3vh 3vw; margin-top: 11vh; height: fit-content; width: 94%; display: flex; flex-wrap: wrap;">
-        <a href = "https://play.google.com/store/apps/details?id=com.jlabapps.rubiks_cube_solver&hl=en&gl=US" style="width: 100%; text-decoration: none; color: white;">
-        <div style="background: radial-gradient(circle at 70% 30%, #5f5f5f, #1a1a1a); width: 100%; height: 50vh; overflow: hidden; position: relative; border-radius: 2vh;">
-                <img src="../../assets/img-cube.png" alt="Rubik's Cube" style="position: absolute; top: 50%; left: 25%; transform: translate(-50%, -50%); width: auto; height: 125%;">
-                    <div style="position: absolute; bottom: 50%; left: 50%; transform: translate(-50%, 50%); text-align: center;">
-                        <div style="color: #ffffff; font-size: 16vh; font-family: unageo; font-weight: bold; white-space: nowrap;">CubeGenie</div>
-                        <div style="color: #ffffff; font-size: 4vh; font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: -7vh; white-space: nowrap;">Cube Solver | Cube Simulator</div>
-                    </div>
+    <section id="section1" class="sectionMargin" style="margin-top: 11vh; height: fit-content; width: fill; display: flex; flex-wrap: wrap;">
+        <div style="display: flex;aspect-ratio: 4;width: 100%;justify-content: center;align-items: center;">
+          <div style="height: 100%; flex: 1 1 auto; display: flex; flex-direction: column;">
+            <div class = "largeText">Cube Genie</div>
+            <div style="justify-content: start; align-items: end;; display: flex; flex: 1 0 auto; width: 90%;">
+              <a href = "https://play.google.com/store/apps/details?id=com.jlabapps.rubiks_cube_solver&hl=en&gl=US" target="_blank">
+                <img src = "../../assets/icon - googlePlay.svg" alt="get on google play" style="width: 15vw; height: auto;">
+              </a>
+            </div>
+          </div>
+          <div class="appIcon"><img src="../../assets/img-cube.png" alt="Puzzle Cube" style="width: auto; height: 75%;"></div>
+          
+          
         </div>
-        </a>
-    
-        <p>Experience cube solving like never before with our all-in-one Rubik's Cube Solver app. Featuring a sleek and user-friendly interface, our app offers a range of customizable skins to suit your style preferences.
-            <br><br>
-            With a built in solving algorithm, our app guarantees solutions for any cube configuration. Whether you're a novice or an expert, our step-by-step solving guide will assist you in mastering the cube effortlessly.
-            <br><br>
-            Say goodbye to manual scrambling – our built-in scrambler provides randomized cube configurations with just a tap. Need a fresh start? Hit the reset button to clear your progress and begin anew.
-            <br><br>
-            For those who prefer a hands-on approach, our input page allows you to input scramble sequences directly from your physical cube, ensuring precise solving every time.
-            <br><br>
-            Join the Cube-solving community and download our app today to enhance your solving experience!
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+    </section>
+  
+    <section id="section2" class="sectionMargin">
+      <div class="carousel">
+          <div><img src="local-assets/Promo-1.png" alt="Image 1"></div>
+          <div><img src="local-assets/Promo-2.png" alt="Image 2"></div>
+          <div><img src="local-assets/Promo-3.png" alt="Image 3"></div>
+          <div><img src="local-assets/Promo-4.png" alt="Image 4"></div>
+          <div><img src="local-assets/Promo-5.png" alt="Image 5"></div>
+          <div><img src="local-assets/Promo-6.png" alt="Image 6"></div>
+          <div><img src="local-assets/Promo-7.png" alt="Image 7"></div>
+      </div>
+    </section>
 
+    <section id="section3" class="sectionMargin" >
+      <p>Experience cube solving like never before with our all-in-one Cube Solver app. Featuring a sleek and user-friendly interface, our app offers a range of customizable skins to suit your style preferences.
+        <br><br>
+        With a built in solving algorithm, our app guarantees solutions for any cube configuration. Whether you're a novice or an expert, our step-by-step solving guide will assist you in mastering the cube effortlessly.
+        <br><br>
+        Say goodbye to manual scrambling – our built-in scrambler provides randomized cube configurations with just a tap. Need a fresh start? Hit the reset button to clear your progress and begin anew.
+        <br><br>
+        For those who prefer a hands-on approach, our input page allows you to input scramble sequences directly from your physical cube, ensuring precise solving every time.
+        <br><br>
+        Join the Cube-solving community and download our app today to enhance your solving experience!
+        <br><br><br><br><br><br><br><br></p>
     </section>
 
     <footer><div style = "width: 100%; text-align: center;">© 2024 Lewis Coding | Joshua Lewis</div></footer>
-
+    
     <script>
         function onResize(){
             const navbar = document.getElementById('navbar');
@@ -74,6 +109,19 @@
                 navbar.style.height= '10vh'
             }
         }
+
+        $(document).ready(function(){
+          $('.carousel').slick({
+              infinite: false,
+              slidesToShow: 5,
+              slidesToScroll: 1,
+              arrows: true,
+              dots: true,
+              autoplay: false,
+              autoplaySpeed: 2000,
+              responsive: [{breakpoint: 768,settings: {slidesToShow: 2}}]
+          });
+      });
     
         window.addEventListener('scroll', onResize);
         window.addEventListener('resize', onResize);
