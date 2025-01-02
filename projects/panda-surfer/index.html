@@ -9,15 +9,34 @@
 
     <style>
         .largeText{font-size: clamp(36px,6vw,100px);}
-        .mediumText{font-size: clamp(18px,3vw,100px);}
-        .titleText{font-size: clamp(18px,2vw,100px);}
-        @media (max-width: 600px) {
-            .largeText{font-size: 48px;}
-            .mediumText{font-size: 32px;}
-            .titleText{font-size: 24px;}
+        @media (max-width: 600px) {.largeText{font-size: 36px;}}
+
+        .sectionMargin{margin: 3vh 10vw;}
+        @media (max-width: 350px) {.section1{margin: 3vh 3vw;}}
+
+        .appIcon {
+          background: #C08A28;
+          height: 100%;
+          aspect-ratio: 1;
+          overflow: hidden;
+          position: relative;
+          border-radius: 2vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
+        .carousel img {width: 100%;height: auto;border-radius: 10px;}
+        .carousel div {margin: 0 10px;}
+        .carousel div {border-radius: 10px;overflow: hidden;}
+
     </style>
+
+    <!--needed for slick-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     
 </head>
 <body>
@@ -25,32 +44,59 @@
         <a href = "../../" style="text-decoration: none; color: white;">
         <div style="height: 100%; display: flex; justify-content: flex-start; align-items: center; flex-direction: row;">
             <img src="../../assets/logo.svg" alt="Logo" style="height: 30px; width: auto; border-radius: 3px; display: block;">
-            <div class="navText" style="display: block; padding-left: 10px;">Cube Solver</div>
+            <div class="navText" style="display: block; padding-left: 10px;">Panda Surfer</div>
         </div></a>
         <div style="height: 100%; display: flex; justify-content: flex-end; align-items: center; flex-wrap: wrap; flex-grow: 1;">
-            <a href="private-policy/" class="navLink" style="margin: 0% 2%; margin-right: 0;" target="_blank">Private Policy</a>
+            <a href="private-policy/" class="navLink" style="margin: 0% 2%;" target="_blank">Private Policy</a>
         </div>
     </nav>
 
-
-    <section id="section1" style = "margin: 3vh 3vw; margin-top: 11vh; height: fit-content; width: 94%; display: flex; flex-wrap: wrap;">
-        
-        <div style="background: radial-gradient(circle at 70% 30%, #be7d15, #553300); width: 100%; height: 50vh; overflow: hidden; position: relative; border-radius: 2vh;">
-                <img src="../../assets/img-panda.png" alt="Rubik's Cube" style="position: absolute; top: 50%; left: 25%; transform: translate(-50%, -50%); width: auto; height: 125%;">
-                    <div style="position: absolute; bottom: 50%; left: 50%; transform: translate(-50%, 50%); text-align: center;">
-                        <div style="color: #ffffff; font-size: 16vh; font-family: unageo; font-weight: bold; white-space: nowrap;">Panda Surfer</div>
-                        <div style="color: #ffffff; font-size: 4vh; font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: -7vh; white-space: nowrap;">Endless Runner | Arcade</div>
-                    </div>
+    <section id="section1" class="sectionMargin" style="margin-top: 11vh; height: fit-content; width: fill; display: flex; flex-wrap: wrap;">
+        <div style="display: flex;aspect-ratio: 4;width: 100%;justify-content: center;align-items: center;">
+          <div style="height: 100%; flex: 1 1 auto; display: flex; flex-direction: column;">
+            <div class = "largeText">Panda Surfer</div>
+            <div style="justify-content: start; align-items: end;; display: flex; flex: 1 0 auto; width: 90%;">
+              <a href = "https://play.google.com/store/apps/details?id=com.lewiscoding.pandasurfer&hl=en&gl=US" target="_blank">
+                <img src = "../../assets/icon - googlePlay.svg" alt="get on google play" style="width: 15vw; height: auto;">
+              </a>
+            </div>
+          </div>
+          <div class="appIcon"><img src="local-assets/app-icon.png" alt="Puzzle Cube" style="width: auto; height: 100%;"></div>
+          
+          
         </div>
-        
-    
-        <p>I'm still working on this app to ensure it's its best before publishing. All the criteria to publish have been met and the app can be published as soon as I feel it is ready.
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+    </section>
+  
+    <section id="section2" class="sectionMargin">
+      <div class="carousel">
+          <div><img src="local-assets/Promo-1.png" alt="Image 1"></div>
+          <div><img src="local-assets/Promo-2.png" alt="Image 2"></div>
+          <div><img src="local-assets/no-img.jpg" alt="No image"></div>
+          <div><img src="local-assets/no-img.jpg" alt="No image"></div>
+          <div><img src="local-assets/no-img.jpg" alt="No image"></div>
+          <div><img src="local-assets/no-img.jpg" alt="No image"></div>
+          <div><img src="local-assets/no-img.jpg" alt="No image"></div>
+          <div><img src="local-assets/no-img.jpg" alt="No image"></div>
+      </div>
+    </section>
 
+    <section id="section3" class="sectionMargin" >
+      <p>
+        Panda Surfer: Dive into the thrilling world of Panda Surfer, an endless runner where players control an adorable panda on a surfboard!
+        <br><br>
+        Game Overview: Navigate through vibrant, tropical landscapes while dodging obstacles. The panda's unique surfing skills will keep you engaged as you compete for high scores.
+        <br><br><br><br>
+        Key Features:
+        <br>
+        Endless Fun: The game never ends! Challenge yourself to achieve the highest score while continuously facing new challenges.<br><br>
+        Stunning Graphics: Enjoy beautifully crafted graphics and animations that bring the panda’s surfing adventure to life.<br><br>
+        User-Friendly Controls: Simple and intuitive controls make it easy for players of all ages to jump in and start surfing.<br><br>
+        Join the Adventure: Are you ready to ride the waves and become the ultimate panda surfer? Download Panda Surfer now and let the endless adventure begin!<br><br>
+        <br><br><br><br><br><br><br><br></p>
     </section>
 
     <footer><div style = "width: 100%; text-align: center;">© 2024 Lewis Coding | Joshua Lewis</div></footer>
-
+    
     <script>
         function onResize(){
             const navbar = document.getElementById('navbar');
@@ -65,6 +111,19 @@
                 navbar.style.height= '10vh'
             }
         }
+
+        $(document).ready(function(){
+          $('.carousel').slick({
+              infinite: false,
+              slidesToShow: 5,
+              slidesToScroll: 1,
+              arrows: true,
+              dots: true,
+              autoplay: false,
+              autoplaySpeed: 2000,
+              responsive: [{breakpoint: 768,settings: {slidesToShow: 2}}]
+          });
+      });
     
         window.addEventListener('scroll', onResize);
         window.addEventListener('resize', onResize);
